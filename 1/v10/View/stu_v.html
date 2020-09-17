@@ -1,0 +1,35 @@
+<!-- 利用HTML展示结果 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>学生表</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<table border="1" cellspacing="0">
+		<tr>
+			<th>学生ID</th>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>班级</th>
+			<th>年龄</th>
+			<th>家乡</th>
+			<th>分数</th>
+			<th>操作</th>
+		</tr>
+		<?php foreach($stu_list as $student) :?>
+		<tr>
+			<td><?php echo $student['id']; ?></td>
+			<td><?php echo $student['name']; ?></td>
+			<td><?php echo $student['gender']; ?></td>
+			<td><?php echo $student['class_id']; ?></td>
+			<td><?php echo $student['age']; ?></td>
+			<td><?php echo $student['home']; ?></td>
+			<td><?php echo $student['score']; ?></td>
+			<td><a href="index.php?c=Stu&a=remove&id=<?php echo $student['id'];?>">删除</a></td>
+		</tr>
+		<?php endForeach; ?>
+	</table>
+	<p><a href="index.php?c=Tea&a=list">查看教师列表</a></p>
+</body>
+</html>
